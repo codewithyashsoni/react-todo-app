@@ -52,7 +52,7 @@ A modern and responsive **To-Do List application** built with **React**. It allo
 
 ## 🚀 Live Demo
 
-🌐 https://react-todo-app-two-umber.vercel.app
+🌐 https://react-todo-yash.vercel.app/
 
 ---
 
