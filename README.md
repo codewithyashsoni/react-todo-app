@@ -1,5 +1,10 @@
 # 📝 React To-Do App
 
+![React](https://img.shields.io/badge/React-19-61DAFB?logo=react&logoColor=white)
+![JavaScript](https://img.shields.io/badge/JavaScript-ES6-F7DF1E?logo=javascript&logoColor=black)
+![Vite](https://img.shields.io/badge/Vite-7-646CFF?logo=vite&logoColor=white)
+![MIT License](https://img.shields.io/badge/License-MIT-green)
+
 A modern and responsive **To-Do List application** built with **React**. It allows users to manage their daily tasks efficiently with features like inline editing, task completion, deletion, dark/light theme switching, and a clean, intuitive user interface.
 
 ---
@@ -23,15 +28,15 @@ A modern and responsive **To-Do List application** built with **React**. It allo
 
 ## 📸 Screenshots
 
-### 🌙 Dark Theme
+<p align="center">
+  <img src="./screenshots/screenshot-dark.png" alt="Dark Theme" width="45%">
+  <img src="./screenshots/screenshot-light.png" alt="Light Theme" width="45%">
+</p>
 
-![Dark Theme](./screenshots/screenshot-dark.png)
-
----
-
-### ☀️ Light Theme
-
-![Light Theme](./screenshots/screenshot-light.png)
+<p align="center">
+  <b>🌙 Dark Theme</b> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  <b>☀️ Light Theme</b>
+</p>
 
 ---
 
@@ -222,6 +227,12 @@ If you'd like to improve this project:
 2. Create a new feature branch.
 3. Commit your changes.
 4. Open a Pull Request.
+
+---
+
+## 📄 License
+
+This project is licensed under the MIT License. See the LICENSE file for details.
 
 ---
 
