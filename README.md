@@ -28,15 +28,25 @@ A modern and responsive **To-Do List application** built with **React**. It allo
 
 ## 📸 Screenshots
 
-<p align="center">
-  <img src="./screenshots/screenshot-dark.png" alt="Dark Theme" width="45%">
-  <img src="./screenshots/screenshot-light.png" alt="Light Theme" width="45%">
-</p>
+<table align="center">
+<tr>
+<td align="center" width="50%">
 
-<p align="center">
-  <b>🌙 Dark Theme</b> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-  <b>☀️ Light Theme</b>
-</p>
+<img src="./screenshots/screenshot-dark.png" alt="Dark Theme" width="100%">
+
+**🌙 Dark Theme**
+
+</td>
+
+<td align="center" width="50%">
+
+<img src="./screenshots/screenshot-light.png" alt="Light Theme" width="100%">
+
+**☀️ Light Theme**
+
+</td>
+</tr>
+</table>
 
 ---
 
