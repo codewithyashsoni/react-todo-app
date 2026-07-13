@@ -5,7 +5,7 @@
 ![Vite](https://img.shields.io/badge/Vite-7-646CFF?logo=vite&logoColor=white)
 ![MIT License](https://img.shields.io/badge/License-MIT-green)
 
-A modern and responsive **To-Do List application** built with **React**. It allows users to manage their daily tasks efficiently with features like inline editing, task completion, deletion, dark/light theme switching, and a clean, intuitive user interface.
+A modern and responsive **To-Do List application** built with **React**. It allows users to manage their daily tasks efficiently with features like inline editing, task filtering, local storage persistence, task completion, deletion, dark/light theme switching, keyboard shortcuts, and a clean, intuitive user interface.
 
 ---
 
@@ -15,13 +15,15 @@ A modern and responsive **To-Do List application** built with **React**. It allo
 * ✏️ Edit tasks by double-clicking
 * ✅ Mark tasks as completed
 * 🗑️ Delete tasks
+* 🔍 Filter tasks (All / Active / Completed)
+* 💾 Automatically save tasks using Local Storage
+* 🌙 Remember selected theme after page refresh
 * 🌙 Toggle between Dark and Light themes
 * 🎨 Elegant UI with smooth animations
+* 📱 Responsive design
 * ⌨️ Keyboard shortcuts
-
   * **Enter** → Add/Save task
   * **Escape** → Cancel editing
-* 📱 Responsive design
 * 🎯 Clean and beginner-friendly React code
 
 ---
@@ -64,6 +66,7 @@ A modern and responsive **To-Do List application** built with **React**. It allo
 * CSS3
 * CSS Variables
 * React Hooks
+* Browser Local Storage API
 * Vite
 
 ---
@@ -139,6 +142,30 @@ The UI updates instantly using CSS Variables.
 
 ---
 
+### Task Filtering
+
+Use the filter buttons above the task list to quickly switch between:
+
+* 📋 All Tasks
+* 🟢 Active Tasks
+* ✅ Completed Tasks
+
+The task list updates instantly without reloading the page.
+
+---
+
+### Local Storage
+
+Tasks are automatically saved in your browser using **Local Storage**.
+
+This means:
+
+* Refreshing the page does not remove your tasks.
+* Your selected theme is also remembered.
+* No login or backend is required.
+
+---
+
 ## 💡 React Concepts Used
 
 This project demonstrates:
@@ -151,7 +178,8 @@ This project demonstrates:
 * Conditional Rendering
 * Event Handling
 * Dynamic Rendering using `.map()`
-* Inline Styling
+* Array Filtering using `.filter()`
+* Browser Local Storage API
 * CSS Variables
 * Responsive Layout
 
@@ -175,6 +203,9 @@ This project demonstrates:
 * Custom scrollbar
 * Dark & Light themes
 * Responsive layout
+* Theme persistence
+* Sticky filter tabs
+* Scrollable task list
 * Elegant typography using **Poppins**
 
 ---
@@ -219,11 +250,10 @@ http://localhost:5173
 * 📅 Due dates
 * 🔍 Search tasks
 * 🏷️ Categories
-* 📂 Filter (All / Active / Completed)
-* ⬆️⬇️ Reorder tasks
-* 💾 Save tasks using Local Storage
+* ⬆️⬇️ Drag & Drop task reordering
 * ☁️ Cloud synchronization
 * 📊 Task statistics
+* 🔔 Notifications & reminders
 
 ---
 
