@@ -389,3 +389,115 @@ input{
     background-color: var(--complete-background);
     color: var(--complete-text);
 }
+@media (max-width: 768px) {
+    body{
+        padding:20px;
+    }
+    .container{
+        height:90vh;
+    }
+    .container h1{
+        font-size:2.4rem;
+    }
+    .input-container{
+        width:100%;
+        gap:10px;
+    }
+    .input-container input{
+        flex:1;
+        min-width:0;
+        font-size:1.2rem !important;
+    }
+    .add-button{
+        font-size:1.2rem;
+        white-space:nowrap;
+    }
+    .tasks-content ul li{
+        font-size:1.4rem;
+    }
+    .buttons-container{
+        width:100px;
+    }
+    .done-btn,
+    .delete-btn{
+        min-width:90px;
+        font-size:0.7em;
+    }
+    .theme-switch{
+        top:18px;
+        right:18px;
+    }
+}
+@media (max-width:480px){
+    body{
+        padding:10px;
+    }
+    .container{
+        height:95vh;
+        border-radius:15px;
+        padding:10px;
+    }
+    .container h1{
+        font-size:2rem;
+        padding-top:45px;
+    }
+    .theme-switch{
+        top:12px;
+        right:12px;
+        transform:scale(.9);
+    }
+    .input-container{
+        width:100%;
+        flex-direction:column;
+        margin:10px 0 15px;
+    }
+    .input-container input{
+        width:100%;
+        font-size:1rem !important;
+    }
+    .add-button{
+        width:100%;
+        font-size:1rem;
+        padding:10px;
+    }
+    .filter-button-container{
+        gap:8px;
+        padding:10px;
+        flex-wrap:wrap;
+    }
+    .filter-button{
+        flex:1;
+        min-width:90px;
+        padding:8px 12px;
+        font-size:.85rem;
+    }
+    .tasks-content ul{
+        padding:10px;
+    }
+    .tasks-content ul li{
+        flex-direction:column;
+        align-items:flex-start;
+        gap:12px;
+        font-size:1rem;
+        padding:15px;
+    }
+    .tasks-content ul li span{
+        width:100%;
+        margin-right:0;
+    }
+    .buttons-container{
+        width:100%;
+        flex-direction:row;
+        justify-content:flex-end;
+    }
+    .done-btn,
+    .delete-btn{
+        min-width:90px;
+        margin:0;
+    }
+    .empty-message{
+        font-size:1.3rem;
+        text-align:center;
+        padding:20px;
+    }
+}
