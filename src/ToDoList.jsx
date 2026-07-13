@@ -1,18 +1,33 @@
 import React, {useState , useEffect} from "react"
 
 function ToDoList(){
-    const [tasks, setTasks] = useState([]);
+    const [tasks, setTasks] = useState(() => {
+        const savedTasks = localStorage.getItem("tasks");
+        if(savedTasks){
+            return JSON.parse(savedTasks);
+        }
+        return []
+    });
     const [newTask, setNewTask] = useState("");
     const [editingIndex,setEditingIndex] = useState(null);
     const [editText, setEditText] = useState("");
-    const [isDarkMode, setIsDarkMode] = useState(true);
+    const [isDarkMode, setIsDarkMode] = useState(() => {
+        const savedTheme = localStorage.getItem("theme");
+        if(savedTheme){
+            return JSON.parse(savedTheme);
+        }
+        return true;
+    });
     const [filter, setFilter] = useState("all");
-
-
 
     useEffect(() => {
         document.body.className = isDarkMode ? "" : "light-theme";
+        localStorage.setItem("theme", JSON.stringify(isDarkMode));
     }, [isDarkMode])
+
+    useEffect(() => {
+        localStorage.setItem("tasks", JSON.stringify(tasks));
+    }, [tasks])
 
     function addTask(){
         if(newTask.trim() === ""){
@@ -97,7 +112,6 @@ function ToDoList(){
                                 <button className={`filter-button ${filter === "active" ? "active-filter" : ""}`} onClick={() => setFilter("active")}>Active</button>
                                 <button className={`filter-button ${filter === "completed" ? "active-filter" : ""}`} onClick={() => setFilter("completed")}>Completed</button>
                             </div>
-
                             <ul>
                                 {tasks.filter((task) => {
                                     if(filter === "all"){
