@@ -6,6 +6,7 @@ function ToDoList(){
     const [editingIndex,setEditingIndex] = useState(null);
     const [editText, setEditText] = useState("");
     const [isDarkMode, setIsDarkMode] = useState(true);
+    const [filter, setFilter] = useState("all");
 
 
 
@@ -90,45 +91,63 @@ function ToDoList(){
                     tasks.length === 0 ?
                         (<p className="empty-message">No tasks yet.</p>)
                         :
-                        (
-                        <ul>
-                            {tasks.map((task, index) => 
-                            <li key={task.id}>
-                                {editingIndex === index ? 
-                                    <input 
-                                        type="text"
-                                        autoFocus
-                                        value={editText}
-                                        onChange={(e) => setEditText(e.target.value)}
-                                        onBlur={saveEdit}
-                                        onKeyDown={(e) => {
-                                            if(e.key === "Enter"){
-                                                saveEdit();
-                                            }
-                                            if(e.key === "Escape"){
-                                                cancelEdit()
-                                            }
-                                        }}    
-                                    />
-                                    : <>
-                                
-                                        <span onDoubleClick={task.completed ? undefined : () => handleDoubleClick(index)} style={{textDecoration: task.completed ? "line-through" : "none"}}>{task.text}</span>
-                                        <div className="buttons-container">
-                                            {task.completed ? (
-                                                <button className="delete-btn" onClick={() => deleteTask(task.id)}>Delete</button>)
-                                            : (
-                                                <>
-                                                    <button className="done-btn" onClick={() => done(index)}>Done</button>
-                                                    <button className="delete-btn" onClick={() => deleteTask(task.id)}>Delete</button>
-                                                </>
-                                            )
-                                            }
-                                        </div>
-                                    </>
+                        (<div className="tasks-content">
+                            <div className="filter-button-container">
+                                <button className={`filter-button ${filter === "all" ? "active-filter" : ""}`} onClick={() => setFilter("all")}>All</button>
+                                <button className={`filter-button ${filter === "active" ? "active-filter" : ""}`} onClick={() => setFilter("active")}>Active</button>
+                                <button className={`filter-button ${filter === "completed" ? "active-filter" : ""}`} onClick={() => setFilter("completed")}>Completed</button>
+                            </div>
+
+                            <ul>
+                                {tasks.filter((task) => {
+                                    if(filter === "all"){
+                                        return true;
+                                    }
+                                    if(filter === "active"){
+                                        return task.completed === false;
+                                    }
+                                    if(filter === "completed"){
+                                        return task.completed === true;
+                                    }
+                                })
+                                .map((task, index) => 
+                                <li key={task.id}>
+                                    {editingIndex === index ? 
+                                        <input 
+                                            type="text"
+                                            autoFocus
+                                            value={editText}
+                                            onChange={(e) => setEditText(e.target.value)}
+                                            onBlur={saveEdit}
+                                            onKeyDown={(e) => {
+                                                if(e.key === "Enter"){
+                                                    saveEdit();
+                                                }
+                                                if(e.key === "Escape"){
+                                                    cancelEdit()
+                                                }
+                                            }}    
+                                        />
+                                        : <>
+                                    
+                                            <span onDoubleClick={task.completed ? undefined : () => handleDoubleClick(index)} style={{textDecoration: task.completed ? "line-through" : "none"}}>{task.text}</span>
+                                            <div className="buttons-container">
+                                                {task.completed ? (
+                                                    <button className="delete-btn" onClick={() => deleteTask(task.id)}>Delete</button>)
+                                                : (
+                                                    <>
+                                                        <button className="done-btn" onClick={() => done(index)}>Done</button>
+                                                        <button className="delete-btn" onClick={() => deleteTask(task.id)}>Delete</button>
+                                                    </>
+                                                )
+                                                }
+                                            </div>
+                                        </>
+                                    }
+                                </li>)
                                 }
-                            </li>)
-                            }
-                        </ul>
+                            </ul>
+                        </div>
                     )
                 }
             </div>
